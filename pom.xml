@@ -22,11 +22,11 @@
         <slf4j-simple.version>1.7.25</slf4j-simple.version>
         <testng.version>7.0.0</testng.version>
         <reportng.version>1.1.4</reportng.version>
+        <velocity.version>1.7</velocity.version>
+        <guice.version>3.0</guice.version>
 
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
-
-        <groups>smoke, full</groups>
 
     </properties>
 
@@ -37,7 +37,7 @@
                 <base.url>http://localhost:8080/</base.url>
             </properties>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
     </profiles>
@@ -57,7 +57,7 @@
                         </property>
                         <property>
                             <name>listener</name>
-                            <value>org.uncommons.reportng.HTMLReporter,com.s_pro.tso_v2.logging.TestListener</value>
+                            <value>org.uncommons.reportng.HTMLReporter,logging.TestListener</value>
                         </property>
                     </properties>
                     <systemPropertyVariables>
@@ -67,7 +67,7 @@
                     </systemPropertyVariables>
                     <suiteXmlFiles>
                         <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${suite}.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -132,6 +132,18 @@
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
             <version>${reportng.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
         </dependency>
 
     </dependencies>

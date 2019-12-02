@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.Urls;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -15,8 +16,7 @@ public class LoginPage extends BasePage {
     private final SelenideElement signInButton = $("img[src='sign.png']");
 
     public LoginPage openWebsite() {
-        //open(Urls.baseUrl);
-        open("http://localhost:8080/");
+        open(Urls.baseUrl);
         return this;
     }
 

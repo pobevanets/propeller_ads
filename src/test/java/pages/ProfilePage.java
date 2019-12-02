@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,6 +15,7 @@ public class ProfilePage extends BasePage {
     private final SelenideElement paymentInfoTab = $$("#v-pills-messages-tab").findBy(text("Payment info"));
     private final SelenideElement cardNumberInput = $("#cardNumberInput");
     private final SelenideElement paymentSystemSelect = $("#paymentSystemSelect");
+    private final SelenideElement paymentDaySlider = $("#paymentRange");
     private final SelenideElement savePaymentInfoButton = $$("button").findBy(text("Save payment info"));
     private final SelenideElement successPaymentInfoSaveNotification = $("#successPaymentInfoSaveInfo");
 
@@ -49,6 +51,18 @@ public class ProfilePage extends BasePage {
 
     public ProfilePage selectPaymentSystem(String paymentSystem) {
         paymentSystemSelect.selectOptionContainingText(paymentSystem);
+        return this;
+    }
+
+    public ProfilePage selectPaymentDay(int day) {
+        paymentSystemSelect.pressTab();
+        if (day == 1) {
+            paymentDaySlider.sendKeys(Keys.ARROW_RIGHT);
+            paymentDaySlider.sendKeys(Keys.ARROW_LEFT);
+        }
+        for (int i = 1; i<day; i++) {
+            paymentDaySlider.sendKeys(Keys.ARROW_RIGHT);
+        }
         return this;
     }
 

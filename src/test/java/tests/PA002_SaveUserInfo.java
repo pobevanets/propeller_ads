@@ -6,7 +6,7 @@ import pages.ProfilePage;
 
 public class PA002_SaveUserInfo extends Actions {
 
-    @Test(testName = "PA002 Save user info", groups = {"full", "smoke"})
+    @Test(testName = "PA002 Save user info")
     public void PA002_SaveUserInfoTest() {
         signIn("test", "test");
 

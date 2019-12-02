@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PropellerAds tests">
+
+    <test name="UI tests">
+        <classes>
+            <class name="tests.PA001_LoginWithValidCreds"/>
+            <class name="tests.PA002_SaveUserInfo"/>
+            <class name="tests.PA003_SavePaymentInfo"/>
+        </classes>
+    </test>
+
+</suite>

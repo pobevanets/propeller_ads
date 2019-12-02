@@ -6,8 +6,8 @@ import pages.ProfilePage;
 
 public class PA003_SavePaymentInfo extends Actions {
 
-    @Test(testName = "PA002 Save payment info", groups = {"full", "smoke"})
-    public void PA002_SavePaymentInfoTest() {
+    @Test(testName = "PA003 Save payment info")
+    public void PA003_SavePaymentInfoTest() {
         signIn("test", "test");
 
         MainPage mainPage = new MainPage();
@@ -17,7 +17,7 @@ public class PA003_SavePaymentInfo extends Actions {
         profilePage.clickPaymentInfoTab()
                 .enterCardNumber("4242424242424242")
                 .selectPaymentSystem("Visa")
-                //.selectDayOfPayment(16);
+                .selectPaymentDay(19)
                 .clickSavePaymentInfo()
                 .successPaymentInfoSaveNotificationIsDisplayed();
     }

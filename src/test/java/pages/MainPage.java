@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import utils.Urls;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -26,7 +27,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage openMainPage() {
-        open("http://localhost:8080/main.html");
+        open(Urls.baseUrl + "main.html");
         return this;
     }
 }
