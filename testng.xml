@@ -1,10 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="PropellerAds tests">
+<suite name="PropellerAds UI tests">
 
-    <test name="UI tests">
+    <test name="Login tests">
         <classes>
             <class name="tests.PA001_LoginWithValidCreds"/>
+        </classes>
+    </test>
+
+    <test name="Profile tests">
+        <classes>
             <class name="tests.PA002_SaveUserInfo"/>
             <class name="tests.PA003_SavePaymentInfo"/>
         </classes>
