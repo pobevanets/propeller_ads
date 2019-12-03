@@ -14,7 +14,7 @@
             <class name="tests.PA011_SaveUserInfo"/>
             <class name="tests.PA012_SavePaymentInfo"/>
             <class name="tests.PA013_SaveUserInfoWithEmptyFields"/>
-
+            <class name="tests.PA014_SavePaymentInfoWithEmptyFields"/>
         </classes>
     </test>
 

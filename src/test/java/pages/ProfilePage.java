@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
@@ -18,8 +19,7 @@ public class ProfilePage extends BasePage {
     private final SelenideElement paymentDaySlider = $("#paymentRange");
     private final SelenideElement savePaymentInfoButton = $$("button").findBy(text("Save payment info"));
     private final SelenideElement successPaymentInfoSaveNotification = $("#successPaymentInfoSaveInfo");
-    private final SelenideElement errorMessageFirstNameInput = $$(".invalid-feedback").findBy(text("Please set your first name."));
-    private final SelenideElement errorMessageLastNameInput = $$(".invalid-feedback").findBy(text("Please set your last name."));
+    private final ElementsCollection errorMessages = $$(".invalid-feedback");
 
     public ProfilePage enterFirstName(String firstName) {
         firstNameInput.setValue(firstName);
@@ -79,22 +79,43 @@ public class ProfilePage extends BasePage {
     }
 
     public ProfilePage errorMessageFirstNameInputIsDisplayed() {
-        errorMessageFirstNameInput.shouldBe(visible);
-        return this;
-    }
-
-    public ProfilePage errorMessageFirstNameInputNotDisplayed() {
-        errorMessageFirstNameInput.shouldNotBe(visible);
+        errorMessages.findBy(text("Please set your first name.")).shouldBe(visible);
         return this;
     }
 
     public ProfilePage errorMessageLastNameInputIsDisplayed() {
-        errorMessageLastNameInput.shouldBe(visible);
+        errorMessages.findBy(text("Please set your last name.")).shouldBe(visible);
         return this;
     }
 
+    public ProfilePage errorMessageCardNumberInputIsDisplayed() {
+        errorMessages.findBy(text("Please set your card number.")).shouldBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessagePaymentSystemInputIsDisplayed() {
+        errorMessages.findBy(text("Please select your payment system.")).shouldBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessageFirstNameInputNotDisplayed() {
+        errorMessages.findBy(text("Please set your first name.")).shouldNotBe(visible);
+        return this;
+    }
+
+
     public ProfilePage errorMessageLastNameInputNotDisplayed() {
-        errorMessageLastNameInput.shouldNotBe(visible);
+        errorMessages.findBy(text("Please set your last name.")).shouldNotBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessageCardNumberInputNotDisplayed() {
+        errorMessages.findBy(text("Please set your card number.")).shouldNotBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessagePaymentSystemInputNotDisplayed() {
+        errorMessages.findBy(text("Please select your payment system.")).shouldNotBe(visible);
         return this;
     }
 
