@@ -18,6 +18,8 @@ public class ProfilePage extends BasePage {
     private final SelenideElement paymentDaySlider = $("#paymentRange");
     private final SelenideElement savePaymentInfoButton = $$("button").findBy(text("Save payment info"));
     private final SelenideElement successPaymentInfoSaveNotification = $("#successPaymentInfoSaveInfo");
+    private final SelenideElement errorMessageFirstNameInput = $$(".invalid-feedback").findBy(text("Please set your first name."));
+    private final SelenideElement errorMessageLastNameInput = $$(".invalid-feedback").findBy(text("Please set your last name."));
 
     public ProfilePage enterFirstName(String firstName) {
         firstNameInput.setValue(firstName);
@@ -75,5 +77,26 @@ public class ProfilePage extends BasePage {
         successPaymentInfoSaveNotification.should(appear);
         return this;
     }
+
+    public ProfilePage errorMessageFirstNameInputIsDisplayed() {
+        errorMessageFirstNameInput.shouldBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessageFirstNameInputNotDisplayed() {
+        errorMessageFirstNameInput.shouldNotBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessageLastNameInputIsDisplayed() {
+        errorMessageLastNameInput.shouldBe(visible);
+        return this;
+    }
+
+    public ProfilePage errorMessageLastNameInputNotDisplayed() {
+        errorMessageLastNameInput.shouldNotBe(visible);
+        return this;
+    }
+
 
 }
