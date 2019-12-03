@@ -33,7 +33,7 @@ public abstract class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void killDriver() {
-        Selenide.close();
+        Selenide.closeWebDriver();
     }
 
     private WebDriver createSelenideWebDriver() {

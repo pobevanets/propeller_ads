@@ -18,7 +18,7 @@
         <maven-surefire-plugin.version>3.0.0-M1</maven-surefire-plugin.version>
         <selenium.version>3.141.59</selenium.version>
         <maven-compiler-plugin.version>1.8</maven-compiler-plugin.version>
-        <selenide.version>5.5.0</selenide.version>
+        <selenide.version>5.5.1</selenide.version>
         <slf4j-simple.version>1.7.25</slf4j-simple.version>
         <testng.version>7.0.0</testng.version>
         <reportng.version>1.1.4</reportng.version>
