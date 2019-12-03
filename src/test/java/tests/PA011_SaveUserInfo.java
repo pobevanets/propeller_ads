@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.ProfilePage;
 
-public class PA002_SaveUserInfo extends Actions {
+public class PA011_SaveUserInfo extends Actions {
 
-    @Test(testName = "PA002 Save user info")
-    public void PA002_SaveUserInfoTest() {
+    @Test(testName = "PA011 Save user info")
+    public void PA011_SaveUserInfoTest() {
         signIn("test", "test");
 
         MainPage mainPage = new MainPage();

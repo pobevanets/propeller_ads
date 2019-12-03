@@ -38,7 +38,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clickSignInButton() {
-        signInButton.waitUntil(visible, 11000).click();
+        signInButton.waitUntil(visible, 12000).click();
         return this;
     }
 
@@ -47,9 +47,23 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage cancelFirstConfirmationDialogue() {
+        dismiss("Are you sure you want to login?");
+        return this;
+    }
+
     public LoginPage confirmSecondConfirmationDialogue() {
         confirm("Really sure?");
         return this;
+    }
+
+    public LoginPage cancelSecondConfirmationDialogue() {
+        dismiss("Really sure?");
+        return this;
+    }
+
+    public String getCurrentUrl() {
+        return getURL();
     }
 
 }

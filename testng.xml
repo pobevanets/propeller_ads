@@ -5,13 +5,14 @@
     <test name="Login tests">
         <classes>
             <class name="tests.PA001_LoginWithValidCreds"/>
+            <class name="tests.PA002_LoginAndCancelConfirmation"/>
         </classes>
     </test>
 
     <test name="Profile tests">
         <classes>
-            <class name="tests.PA002_SaveUserInfo"/>
-            <class name="tests.PA003_SavePaymentInfo"/>
+            <class name="tests.PA011_SaveUserInfo"/>
+            <class name="tests.PA012_SavePaymentInfo"/>
         </classes>
     </test>
 
