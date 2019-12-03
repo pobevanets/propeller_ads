@@ -1,8 +1,9 @@
-package tests;
+package tests.profile;
 
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.ProfilePage;
+import tests.Actions;
 
 public class PA014_SavePaymentInfoWithEmptyFields extends Actions {
 

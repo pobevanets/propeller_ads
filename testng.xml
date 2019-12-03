@@ -4,17 +4,17 @@
 
     <test name="Login tests">
         <classes>
-            <class name="tests.PA001_LoginWithValidCreds"/>
-            <class name="tests.PA002_LoginAndCancelConfirmation"/>
+            <class name="tests.login.PA001_LoginWithValidCreds"/>
+            <class name="tests.login.PA002_LoginAndCancelConfirmation"/>
         </classes>
     </test>
 
     <test name="Profile tests">
         <classes>
-            <class name="tests.PA011_SaveUserInfo"/>
-            <class name="tests.PA012_SavePaymentInfo"/>
-            <class name="tests.PA013_SaveUserInfoWithEmptyFields"/>
-            <class name="tests.PA014_SavePaymentInfoWithEmptyFields"/>
+            <class name="tests.profile.PA011_SaveUserInfo"/>
+            <class name="tests.profile.PA012_SavePaymentInfo"/>
+            <class name="tests.profile.PA013_SaveUserInfoWithEmptyFields"/>
+            <class name="tests.profile.PA014_SavePaymentInfoWithEmptyFields"/>
         </classes>
     </test>
 

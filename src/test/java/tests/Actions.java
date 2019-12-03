@@ -4,7 +4,7 @@ import pages.LoginPage;
 import pages.MainPage;
 
 public class Actions extends BaseTest {
-    void signIn(String login, String password) {
+    public void signIn(String login, String password) {
         new LoginPage().openWebsite()
                 .enterLogin(login)
                 .enterPassword(password)
