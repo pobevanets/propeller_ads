@@ -1,19 +1,14 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import logging.EventHandler;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
@@ -22,10 +17,10 @@ public abstract class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void browserConf() {
         WebDriver driver;
-        if (System.getProperty("browser.type").equals("headless"))
+        if (System.getProperty("mode").equals("headless"))
             driver = createHeadlessChromeWebDriver();
         else
-            driver = createSelenideWebDriver();
+            driver = createVisibleChromeWebDriver();
         setEventFiringWebDriver(driver);
         // set false -> do not escape html symbols in reportNG html reports
         System.setProperty("org.uncommons.reportng.escape-output", "false");
@@ -36,21 +31,19 @@ public abstract class BaseTest {
         Selenide.closeWebDriver();
     }
 
-    private WebDriver createSelenideWebDriver() {
+    private WebDriver createVisibleChromeWebDriver() {
         System.setProperty("webdriver.chrome.driver", provideDriverAccToSystemType());
-        Configuration.browser = "Chrome";
-        Configuration.startMaximized = true;
-        Configuration.holdBrowserOpen = false;
-        Configuration.timeout = 15000;
         ChromeOptions options = new ChromeOptions();
-        Map<String, Object> prefs = new HashMap<>();
-        // do not allow notifications (popup from browser)
-        prefs.put("profile.default_content_setting_values.notifications", 2);
-        options.setExperimentalOption("prefs", prefs);
-        // options.addArguments ("headless","disable-gpu");
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().setSize(new Dimension(1920, 1080));
+        return driver;
+    }
+
+    private WebDriver createHeadlessChromeWebDriver() {
+        System.setProperty("webdriver.chrome.driver", provideDriverAccToSystemType());
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().setSize(new Dimension(1920, 1080));
         return driver;
     }
@@ -59,22 +52,6 @@ public abstract class BaseTest {
         EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
         eventDriver.register(new EventHandler());
         setWebDriver(eventDriver);
-    }
-
-    private WebDriver createHeadlessChromeWebDriver() {
-        System.setProperty("webdriver.chrome.driver", provideDriverAccToSystemType());
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        Map<String, Object> prefs = new HashMap<>();
-        // do not allow notifications (popup from browser)
-        prefs.put("profile.default_content_setting_values.notifications", 2);
-        // allow geolocation (popup from browser)
-        prefs.put("profile.default_content_setting_values.geolocation", 1);
-
-        chromeOptions.setExperimentalOption("prefs", prefs);
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().setSize(new Dimension(1920, 1080));
-        return driver;
     }
 
     private String OS = System.getProperty("os.name").toLowerCase();
