@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProfilePage extends BasePage {
     private final SelenideElement firstNameInput = $("#firstNameInput");
@@ -119,5 +118,19 @@ public class ProfilePage extends BasePage {
         return this;
     }
 
+
+    public ProfilePage selectTextInFirstNameInput() {
+        firstNameInput.doubleClick();
+        return this;
+    }
+
+    public ProfilePage selectTextInLastNameInput() {
+        lastNameInput.doubleClick();
+        return this;
+    }
+
+    public String getHighlightedText() {
+        return executeJavaScript("return window.getSelection().toString();");
+    }
 
 }
