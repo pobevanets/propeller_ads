@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import utils.Urls;
 
@@ -12,6 +13,7 @@ public class MainPage extends BasePage {
     private final SelenideElement advertisersButton = $$("button.tree-main-button").findBy(text("Advertisers"));
     private final SelenideElement publishersButton = $$("button.tree-main-button").findBy(text("Publishers"));
     private final SelenideElement topLevelClientsButton = $$("button.tree-main-button").findBy(text("Top level clients"));
+    private final ElementsCollection articlesButtons = $$("button.btn.btn-outline-info.tree-button");
 
     public MainPage waitForMainPage() {
         avatar.waitUntil(visible, 6000);
@@ -23,6 +25,26 @@ public class MainPage extends BasePage {
 
     public MainPage clickAvatar() {
         avatar.click();
+        return this;
+    }
+
+    public MainPage clickAdvertisersButton() {
+        advertisersButton.click();
+        return this;
+    }
+
+    public MainPage clickPublishersButton() {
+        publishersButton.click();
+        return this;
+    }
+
+    public MainPage clickTopLevelClientsButton() {
+        topLevelClientsButton.click();
+        return this;
+    }
+
+    public MainPage checkArticlesButtonsQuantity(int expectedSize) {
+        articlesButtons.filter(visible).shouldHaveSize(expectedSize);
         return this;
     }
 

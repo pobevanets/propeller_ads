@@ -18,4 +18,10 @@
         </classes>
     </test>
 
+    <test name="Articles tests">
+        <classes>
+            <class name="tests.articles.PA021_CheckArticlesQuantity"/>
+        </classes>
+    </test>
+
 </suite>
