@@ -19,6 +19,7 @@ public class ProfilePage extends BasePage {
     private final SelenideElement savePaymentInfoButton = $$("button").findBy(text("Save payment info"));
     private final SelenideElement successPaymentInfoSaveNotification = $("#successPaymentInfoSaveInfo");
     private final ElementsCollection errorMessages = $$(".invalid-feedback");
+    private final SelenideElement paymentDayValue = $("h6");
 
     public ProfilePage enterFirstName(String firstName) {
         firstNameInput.setValue(firstName);
@@ -127,6 +128,19 @@ public class ProfilePage extends BasePage {
     public ProfilePage selectTextInLastNameInput() {
         lastNameInput.doubleClick();
         return this;
+    }
+
+    public ProfilePage selectTextInCardNumberInput() {
+        cardNumberInput.doubleClick();
+        return this;
+    }
+
+    public String getSelectedPaymentSystem() {
+        return paymentSystemSelect.getSelectedOption().text();
+    }
+
+    public int getSelectedPaymentDay() {
+        return Integer.parseInt(paymentDayValue.text().replaceAll("\\D+",""));
     }
 
     public String getHighlightedText() {
