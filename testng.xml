@@ -21,6 +21,7 @@
     <test name="Articles tests">
         <classes>
             <class name="tests.articles.PA021_CheckArticlesQuantity"/>
+            <class name="tests.articles.PA022_CheckArticlePagesAreDisplayed"/>
         </classes>
     </test>
 

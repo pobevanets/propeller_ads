@@ -12,6 +12,6 @@ public class Actions extends BaseTest {
                 .clickSignInButton()
                 .confirmFirstConfirmationDialogue()
                 .confirmSecondConfirmationDialogue();
-        new MainPage().waitForMainPage();
+        new MainPage().waitForMainPageIsDisplayed();
     }
 }

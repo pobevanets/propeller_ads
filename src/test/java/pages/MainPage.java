@@ -15,7 +15,7 @@ public class MainPage extends BasePage {
     private final SelenideElement topLevelClientsButton = $$("button.tree-main-button").findBy(text("Top level clients"));
     private final ElementsCollection articlesButtons = $$("button.btn.btn-outline-info.tree-button");
 
-    public MainPage waitForMainPage() {
+    public MainPage waitForMainPageIsDisplayed() {
         avatar.waitUntil(visible, 6000);
         advertisersButton.shouldBe(visible);
         publishersButton.shouldBe(visible);
@@ -40,6 +40,11 @@ public class MainPage extends BasePage {
 
     public MainPage clickTopLevelClientsButton() {
         topLevelClientsButton.click();
+        return this;
+    }
+
+    public MainPage clickFirstArticleButton() {
+        articlesButtons.filter(visible).first().click();
         return this;
     }
 
