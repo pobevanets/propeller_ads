@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class ArticlePage extends BasePage {
     private final SelenideElement articleTitle = $("h5.card-title");
-    private final SelenideElement downloadInfoButton = $$("button").findBy(text("Download info"));
+    public final SelenideElement downloadInfoButton = $$("button").findBy(text("Download info"));
     private final SelenideElement articleImage = $("#heroImage");
     private final SelenideElement imageSlider = $("div.ui-slider");
     private final SelenideElement moveToSavedButton = $$("button").findBy(text("Move to saved"));

@@ -16,6 +16,11 @@ public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void browserConf() {
+/*        SelenideConfig config = new SelenideConfig();
+        Configuration.fileDownload = FileDownloadMode.PROXY;
+        Configuration.proxyEnabled = true;
+        Configuration.reportsFolder = System.getProperty("selenide.reportsFolder", "build/reports/tests");
+        SelenideDriver driver = new SelenideDriver(config);*/
         WebDriver driver;
         if (System.getProperty("mode").equals("headless"))
             driver = createHeadlessChromeWebDriver();
