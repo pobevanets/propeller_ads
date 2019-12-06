@@ -14,6 +14,7 @@ public class MainPage extends BasePage {
     private final SelenideElement publishersButton = $$("button.tree-main-button").findBy(text("Publishers"));
     private final SelenideElement topLevelClientsButton = $$("button.tree-main-button").findBy(text("Top level clients"));
     private final ElementsCollection articlesButtons = $$("button.btn.btn-outline-info.tree-button");
+    private final SelenideElement savedArticlesBlock = $$("div.card").findBy(text("Saved articles"));
 
     public MainPage waitForMainPageIsDisplayed() {
         avatar.waitUntil(visible, 6000);
@@ -43,8 +44,23 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage clickTopLevelClientsButtonInSavedArticles() {
+        savedArticlesBlock.$$("button.tree-main-button").findBy(text("Top level clients")).click();
+        return this;
+    }
+
     public MainPage clickFirstArticleButton() {
         articlesButtons.filter(visible).first().click();
+        return this;
+    }
+
+    public MainPage clickArticleButton(String articleTitle) {
+        articlesButtons.findBy(text(articleTitle)).click();
+        return this;
+    }
+
+    public MainPage clickArticleButtonInSavedArticles(String articleTitle) {
+        savedArticlesBlock.$$("button.btn.btn-outline-info.tree-button").findBy(text(articleTitle)).click();
         return this;
     }
 
@@ -56,5 +72,9 @@ public class MainPage extends BasePage {
     public MainPage openMainPage() {
         open(Urls.baseUrl + "main.html");
         return this;
+    }
+
+    public boolean isSavedArticlesBlockDisplayed() {
+        return savedArticlesBlock.is(visible);
     }
 }

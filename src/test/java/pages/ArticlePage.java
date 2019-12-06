@@ -24,8 +24,17 @@ public class ArticlePage extends BasePage {
         return this;
     }
 
+    public String getArticleTitle() {
+        return articleTitle.text();
+    }
+
     public ArticlePage scrollToDescriptionBottom() {
         executeJavaScript("$('textarea.form-control').scrollTop($('textarea.form-control')[0].scrollHeight);");
+        return this;
+    }
+
+    public ArticlePage clickMoveToSavedButton() {
+        moveToSavedButton.click();
         return this;
     }
 
