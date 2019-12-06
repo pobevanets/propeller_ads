@@ -11,8 +11,11 @@ public class ArticlePage extends BasePage {
     public final SelenideElement downloadInfoButton = $$("button").findBy(text("Download info"));
     private final SelenideElement articleImage = $("#heroImage");
     private final SelenideElement imageSlider = $("div.ui-slider");
+    private final SelenideElement sliderControl = $("span.ui-slider-handle");
     private final SelenideElement moveToSavedButton = $$("button").findBy(text("Move to saved"));
     private final SelenideElement removedFromSavedButton = $$("button").findBy(text("Removed from saved"));
+    private final SelenideElement avatar = $("#avatar");
+    private final SelenideElement advertisersButton = $$("button.tree-main-button").findBy(text("Advertisers"));
 
     public ArticlePage waitForArticlePageIsDisplayed() {
         articleTitle.waitUntil(visible, 12000);
@@ -50,6 +53,18 @@ public class ArticlePage extends BasePage {
 
     public ArticlePage checkImageSizeIsCorrect(String expectedSize) {
         articleImage.shouldHave(attribute("style", expectedSize));
+        return this;
+    }
+
+    public ArticlePage increaseImageToMaximum() {
+        sliderControl.dragAndDropTo(avatar);
+        imageSlider.scrollTo();
+        return this;
+    }
+
+    public ArticlePage decreaseImageToMinimum() {
+        sliderControl.dragAndDropTo(advertisersButton);
+        imageSlider.scrollTo();
         return this;
     }
 

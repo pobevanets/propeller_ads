@@ -24,6 +24,7 @@
             <class name="tests.articles.PA022_CheckArticlePagesAreDisplayed"/>
             <class name="tests.articles.PA023_MoveToSavedButtonIsDisabledUntilScroll"/>
             <class name="tests.articles.PA024_CheckSavedArticlesFunctionality"/>
+            <class name="tests.articles.PA025_CheckImageSizeCanBeChangedBySlider"/>
         </classes>
     </test>
 

@@ -1,6 +1,5 @@
 package tests.articles;
 
-import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import pages.ArticlePage;
 import pages.MainPage;
@@ -14,11 +13,13 @@ public class PA025_CheckImageSizeCanBeChangedBySlider extends Actions {
         MainPage mainPage = new MainPage();
         mainPage.clickAdvertisersButton()
                 .clickFirstArticleButton();
-        ArticlePage articlePage = new ArticlePage();
-        articlePage.waitForArticlePageIsDisplayed();
 
-        articlePage.checkImageSizeIsCorrect("width: 300px; height: 300px;");
-        Selenide.sleep(5000);
-        articlePage.checkImageSizeIsCorrect("width: 500px; height: 500px;");
+        ArticlePage articlePage = new ArticlePage();
+        articlePage.waitForArticlePageIsDisplayed()
+                .checkImageSizeIsCorrect("width: 300px; height: 300px;")
+                .increaseImageToMaximum()
+                .checkImageSizeIsCorrect("width: 500px; height: 500px;")
+                .decreaseImageToMinimum()
+                .checkImageSizeIsCorrect("width: 300px; height: 300px;");
     }
 }
