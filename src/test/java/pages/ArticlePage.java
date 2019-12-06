@@ -2,13 +2,12 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ArticlePage extends BasePage {
     private final SelenideElement articleTitle = $("h5.card-title");
+    private final SelenideElement description = $("textarea.form-control");
     public final SelenideElement downloadInfoButton = $$("button").findBy(text("Download info"));
     private final SelenideElement articleImage = $("#heroImage");
     private final SelenideElement imageSlider = $("div.ui-slider");
@@ -22,6 +21,21 @@ public class ArticlePage extends BasePage {
         imageSlider.scrollTo().shouldBe(visible);
         moveToSavedButton.scrollTo().shouldBe(visible);
         removedFromSavedButton.scrollTo().shouldBe(visible);
+        return this;
+    }
+
+    public ArticlePage scrollToDescriptionBottom() {
+        executeJavaScript("$('textarea.form-control').scrollTop($('textarea.form-control')[0].scrollHeight);");
+        return this;
+    }
+
+    public ArticlePage checkMoveToSavedButtonIsDisabled() {
+        moveToSavedButton.shouldHave(attribute("disabled", "true"));
+        return this;
+    }
+
+    public ArticlePage checkMoveToSavedButtonIsActive() {
+        moveToSavedButton.shouldNotHave(attribute("disabled"));
         return this;
     }
 

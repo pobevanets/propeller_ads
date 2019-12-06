@@ -21,7 +21,6 @@ public class PA025_VerifyTextInDownloadedFile extends Actions {
         ArticlePage articlePage = new ArticlePage();
         articlePage.waitForArticlePageIsDisplayed();
 
-
         File downloadedFile = articlePage.downloadInfoButton.download(10000);
 
         Assert.assertTrue(downloadedFile.toString().contains("Jon Snow"));

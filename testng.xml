@@ -22,6 +22,7 @@
         <classes>
             <class name="tests.articles.PA021_CheckArticlesQuantity"/>
             <class name="tests.articles.PA022_CheckArticlePagesAreDisplayed"/>
+            <class name="tests.articles.PA023_MoveToSavedButtonIsDisabledUntilScroll"/>
         </classes>
     </test>
 
