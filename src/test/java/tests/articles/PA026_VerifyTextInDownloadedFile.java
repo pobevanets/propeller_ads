@@ -9,10 +9,10 @@ import tests.Actions;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class PA025_VerifyTextInDownloadedFile extends Actions {
+public class PA026_VerifyTextInDownloadedFile extends Actions {
 
-    @Test(testName = "PA025 Verify text in downloaded file")
-    public void PA025_VerifyTextInDownloadedFileTest() throws FileNotFoundException {
+    @Test(testName = "PA026 Verify text in downloaded file")
+    public void PA026_VerifyTextInDownloadedFileTest() throws FileNotFoundException {
         signIn("test", "test");
 
         MainPage mainPage = new MainPage();

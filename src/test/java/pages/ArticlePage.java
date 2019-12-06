@@ -48,4 +48,9 @@ public class ArticlePage extends BasePage {
         return this;
     }
 
+    public ArticlePage checkImageSizeIsCorrect(String expectedSize) {
+        articleImage.shouldHave(attribute("style", expectedSize));
+        return this;
+    }
+
 }
