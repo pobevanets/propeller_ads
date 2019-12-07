@@ -1,6 +1,5 @@
 package tests.articles;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.ArticlePage;
@@ -9,6 +8,8 @@ import tests.Actions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+
+import static org.testng.Assert.*;
 
 public class PA026_VerifyTextInDownloadedFile extends Actions {
 
@@ -27,6 +28,6 @@ public class PA026_VerifyTextInDownloadedFile extends Actions {
 
         File downloadedFile = articlePage.downloadInfoButton.download(10000);
 
-        Assert.assertTrue(downloadedFile.toString().contains("Jon Snow"));
+        assertTrue(downloadedFile.toString().contains("Jon Snow"));
     }
 }

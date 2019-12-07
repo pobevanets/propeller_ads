@@ -1,11 +1,12 @@
 package tests.profile;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.ProfilePage;
 import tests.Actions;
+
+import static org.testng.Assert.*;
 
 public class PA012_SavePaymentInfo extends Actions {
     String cardNumber = "4242424242424242";
@@ -35,8 +36,8 @@ public class PA012_SavePaymentInfo extends Actions {
 
         profilePage.clickPaymentInfoTab()
                 .selectTextInCardNumberInput();
-        Assert.assertEquals(profilePage.getHighlightedText(), cardNumber, "Card Number is not as expected!");
-        Assert.assertEquals(profilePage.getSelectedPaymentSystem(), paymentSystem, "Payment System is not as expected!");
-        Assert.assertEquals(profilePage.getSelectedPaymentDay(), paymentDay, "Payment Day is not as expected!");
+        assertEquals(profilePage.getHighlightedText(), cardNumber, "Card Number is not as expected!");
+        assertEquals(profilePage.getSelectedPaymentSystem(), paymentSystem, "Payment System is not as expected!");
+        assertEquals(profilePage.getSelectedPaymentDay(), paymentDay, "Payment Day is not as expected!");
     }
 }

@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import utils.Urls;
 
 import static com.codeborne.selenide.Condition.*;
@@ -77,4 +78,9 @@ public class MainPage extends BasePage {
     public boolean isSavedArticlesBlockDisplayed() {
         return savedArticlesBlock.is(visible);
     }
+
+    public boolean isSavedArticleInCookies(String articleTitle) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("saved").toString().contains(articleTitle);
+    }
+
 }

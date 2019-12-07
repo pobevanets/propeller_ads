@@ -1,11 +1,12 @@
 package tests.profile;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.ProfilePage;
 import tests.Actions;
+
+import static org.testng.Assert.*;
 
 public class PA011_SaveUserInfo extends Actions {
     String firstName = "Roman";
@@ -31,9 +32,9 @@ public class PA011_SaveUserInfo extends Actions {
                 .clickAvatar();
 
         profilePage.selectTextInFirstNameInput();
-        Assert.assertEquals(profilePage.getHighlightedText(), firstName, "First name is not as expected!");
+        assertEquals(profilePage.getHighlightedText(), firstName, "First name is not as expected!");
 
         profilePage.selectTextInLastNameInput();
-        Assert.assertEquals(profilePage.getHighlightedText(), lastName, "Last name is not as expected!");
+        assertEquals(profilePage.getHighlightedText(), lastName, "Last name is not as expected!");
     }
 }

@@ -1,10 +1,11 @@
 package tests.login;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import tests.Actions;
 import utils.Urls;
+
+import static org.testng.Assert.*;
 
 public class PA002_LoginAndCancelConfirmation extends Actions {
 
@@ -21,7 +22,7 @@ public class PA002_LoginAndCancelConfirmation extends Actions {
                 .confirmFirstConfirmationDialogue()
                 .cancelSecondConfirmationDialogue();
 
-        Assert.assertEquals(loginPage.getCurrentUrl(), Urls.baseUrl + "loginError.html",
+        assertEquals(loginPage.getCurrentUrl(), Urls.baseUrl + "loginError.html",
                 "Error page is not as expected");
     }
 }
