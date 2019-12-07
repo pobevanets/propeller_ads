@@ -1,6 +1,7 @@
 package tests.profile;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.ProfilePage;
@@ -11,10 +12,13 @@ public class PA012_SavePaymentInfo extends Actions {
     String paymentSystem = "Visa";
     int paymentDay = 19;
 
+    @BeforeMethod(alwaysRun = true)
+    public void preConditions() {
+        signInWithCookies();
+    }
+
     @Test(testName = "PA012 Save payment info")
     public void PA012_SavePaymentInfoTest() {
-        signIn("test", "test");
-
         MainPage mainPage = new MainPage();
         mainPage.clickAvatar();
 

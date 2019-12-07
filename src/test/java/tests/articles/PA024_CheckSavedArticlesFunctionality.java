@@ -1,6 +1,7 @@
 package tests.articles;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.ArticlePage;
 import pages.MainPage;
@@ -9,10 +10,13 @@ import tests.Actions;
 public class PA024_CheckSavedArticlesFunctionality extends Actions {
     String articleTitle = "Leonel Messi";
 
+    @BeforeMethod(alwaysRun = true)
+    public void preConditions() {
+        signInWithCookies();
+    }
+
     @Test(testName = "PA024 Check Saved Articles functionality")
     public void PA024_CheckSavedArticlesFunctionalityTest() {
-        signIn("test", "test");
-
         MainPage mainPage = new MainPage();
         Assert.assertFalse(mainPage.isSavedArticlesBlockDisplayed(), "Saved Articles block is displayed!");
 

@@ -1,15 +1,19 @@
 package tests.articles;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import tests.Actions;
 
 public class PA021_CheckArticlesQuantity extends Actions {
 
+    @BeforeMethod(alwaysRun = true)
+    public void preConditions() {
+        signInWithCookies();
+    }
+
     @Test(testName = "PA021 Check articles quantity")
     public void PA021_CheckArticlesQuantityTest() {
-        signIn("test", "test");
-
         MainPage mainPage = new MainPage();
         mainPage.clickAdvertisersButton()
                 .checkArticlesButtonsQuantity(2)

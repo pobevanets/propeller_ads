@@ -1,15 +1,20 @@
 package tests.articles;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.ArticlePage;
 import pages.MainPage;
 import tests.Actions;
 
 public class PA025_CheckImageSizeCanBeChangedBySlider extends Actions {
+
+    @BeforeMethod(alwaysRun = true)
+    public void preConditions() {
+        signInWithCookies();
+    }
+
     @Test(testName = "PA025 Check image size can be changed by slider")
     public void PA025_CheckImageSizeCanBeChangedBySliderTest() {
-        signIn("test", "test");
-
         MainPage mainPage = new MainPage();
         mainPage.clickAdvertisersButton()
                 .clickFirstArticleButton();
