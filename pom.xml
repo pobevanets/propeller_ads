@@ -10,7 +10,6 @@
 
     <properties>
         <maven-surefire-plugin.version>3.0.0-M1</maven-surefire-plugin.version>
-        <selenium.version>3.141.59</selenium.version>
         <maven-compiler-plugin.version>1.8</maven-compiler-plugin.version>
         <selenide.version>5.5.1</selenide.version>
         <slf4j-simple.version>1.7.25</slf4j-simple.version>
@@ -80,24 +79,6 @@
     </build>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
         <dependency>
             <groupId>com.codeborne</groupId>
