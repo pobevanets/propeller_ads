@@ -16,6 +16,7 @@ public class MainPage extends BasePage {
     private final SelenideElement topLevelClientsButton = $$("button.tree-main-button").findBy(text("Top level clients"));
     private final ElementsCollection articlesButtons = $$("button.btn.btn-outline-info.tree-button");
     private final SelenideElement savedArticlesBlock = $$("div.card").findBy(text("Saved articles"));
+    private final SelenideElement bodyText = $("pre");
 
     public MainPage waitForMainPageIsDisplayed() {
         avatar.waitUntil(visible, 6000);
@@ -75,12 +76,26 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage openUrl(String url) {
+        open(Urls.baseUrl + url);
+        return this;
+    }
+
     public boolean isSavedArticlesBlockDisplayed() {
         return savedArticlesBlock.is(visible);
     }
 
     public boolean isSavedArticleInCookies(String articleTitle) {
         return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("saved").toString().contains(articleTitle);
+    }
+
+    public String getBodyText() {
+        if (bodyText.is(visible)) {
+            return bodyText.text().replaceAll(" ", "");
+        }
+        else {
+            return "Seems that link is wrong! Please check the link in browser manually";
+        }
     }
 
 }
