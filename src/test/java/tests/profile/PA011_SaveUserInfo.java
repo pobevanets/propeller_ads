@@ -33,8 +33,10 @@ public class PA011_SaveUserInfo extends Actions {
 
         profilePage.selectTextInFirstNameInput();
         assertEquals(profilePage.getHighlightedText(), firstName, "First name is not as expected!");
+        assertTrue(profilePage.isFirstNameSavedInCookies(firstName), "First Name is NOT saved in cookies!");
 
         profilePage.selectTextInLastNameInput();
         assertEquals(profilePage.getHighlightedText(), lastName, "Last name is not as expected!");
+        assertTrue(profilePage.isLastNameSavedInCookies(lastName), "Last Name is NOT saved in cookies!");
     }
 }

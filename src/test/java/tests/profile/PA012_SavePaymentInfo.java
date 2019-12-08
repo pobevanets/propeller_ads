@@ -39,5 +39,8 @@ public class PA012_SavePaymentInfo extends Actions {
         assertEquals(profilePage.getHighlightedText(), cardNumber, "Card Number is not as expected!");
         assertEquals(profilePage.getSelectedPaymentSystem(), paymentSystem, "Payment System is not as expected!");
         assertEquals(profilePage.getSelectedPaymentDay(), paymentDay, "Payment Day is not as expected!");
+        assertTrue(profilePage.isCardNumberSavedInCookies(cardNumber), "Card Number is NOT saved in cookies!");
+        assertTrue(profilePage.isPaymentSystemSavedInCookies("1"), "Payment System is NOT saved in cookies!");
+        assertTrue(profilePage.isPaymentDaySavedInCookies(Integer.toString(paymentDay)), "Payment Day is NOT saved in cookies!");
     }
 }

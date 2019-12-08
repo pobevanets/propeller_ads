@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.*;
@@ -145,6 +146,26 @@ public class ProfilePage extends BasePage {
 
     public String getHighlightedText() {
         return executeJavaScript("return window.getSelection().toString();");
+    }
+
+    public boolean isFirstNameSavedInCookies(String firstName) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("firstName").toString().contains(firstName);
+    }
+
+    public boolean isLastNameSavedInCookies(String lastName) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("lastName").toString().contains(lastName);
+    }
+
+    public boolean isCardNumberSavedInCookies(String cardNumber) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("cardNumber").toString().contains(cardNumber);
+    }
+
+    public boolean isPaymentSystemSavedInCookies(String paymentSystem) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("paymentSystem").toString().contains(paymentSystem);
+    }
+
+    public boolean isPaymentDaySavedInCookies(String paymentDay) {
+        return WebDriverRunner.driver().getWebDriver().manage().getCookieNamed("paymentDay").toString().contains(paymentDay);
     }
 
 }
