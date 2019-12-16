@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import logging.EventHandler;
@@ -15,9 +16,9 @@ public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void browserConf() {
+        Configuration.browserSize = "1920x1080";
         Selenide.open("about:blank");
         WebDriver driver = WebDriverRunner.driver().getWebDriver();
-        driver.manage().window().setSize(new Dimension(1920, 1080));
         EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
         eventDriver.register(new EventHandler());
         setWebDriver(eventDriver);

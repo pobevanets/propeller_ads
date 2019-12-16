@@ -111,12 +111,14 @@
             <version>${reportng.version}</version>
         </dependency>
 
+        <!--Used for reports correct generating only-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>${velocity.version}</version>
         </dependency>
 
+        <!--Used for reports correct generating only-->
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
