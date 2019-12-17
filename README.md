@@ -3,7 +3,7 @@
 
 ### Task for Championship:
 Docker container is used for application launch, use the following command to run it:  
-**$ docker run -d -p 8080:8080 qapropeller/qa-battle:latest**  
+**docker run -d -p 8080:8080 qapropeller/qa-battle:latest**  
 After running this command, the application will be available by the following link: **http://localhost:8080**  
 Valid credentials to sign in to application:  
 **login:** test  
@@ -16,10 +16,10 @@ https://hub.docker.com/repository/docker/qapropeller/qa-battle
 ## To run tests in various modes use the following commands:
 | Mode | Command |
 | --- | --- |
-| **Chrome visible** | $ mvn clean test |
-| **Chrome headless** | $ mvn clean test -Dselenide.headless=true |
-| **Firefox visible** | $ mvn clean test -Dselenide.browser=firefox |
-| **Firefox headless** | $ mvn clean test -Dselenide.browser=firefox -Dselenide.headless=true |
+| **Chrome visible** | mvn clean test |
+| **Chrome headless** | mvn clean test -Dselenide.headless=true |
+| **Firefox visible** | mvn clean test -Dselenide.browser=firefox |
+| **Firefox headless** | mvn clean test -Dselenide.browser=firefox -Dselenide.headless=true |
 
 
 ### Reports:
