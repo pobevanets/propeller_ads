@@ -7,10 +7,10 @@ import utils.Urls;
 
 import static org.testng.Assert.*;
 
-public class PA002_LoginAndCancelConfirmation extends Actions {
+public class LoginAndCancelConfirmation extends Actions {
 
-    @Test(testName = "PA002 Login and cancel confirmation")
-    public void PA002_LoginAndCancelConfirmationTest() {
+    @Test(testName = "Login and cancel confirmation")
+    public void LoginAndCancelConfirmationTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.openWebsite()
                 .enterLogin("test")

@@ -4,28 +4,28 @@
 
     <test name="Login tests">
         <classes>
-            <class name="tests.login.PA001_LoginWithValidCreds"/>
-            <class name="tests.login.PA002_LoginAndCancelConfirmation"/>
+            <class name="tests.login.LoginWithValidCreds"/>
+            <class name="tests.login.LoginAndCancelConfirmation"/>
         </classes>
     </test>
 
     <test name="Profile tests">
         <classes>
-            <class name="tests.profile.PA011_SaveUserInfo"/>
-            <class name="tests.profile.PA012_SavePaymentInfo"/>
-            <class name="tests.profile.PA013_SaveUserInfoWithEmptyFields"/>
-            <class name="tests.profile.PA014_SavePaymentInfoWithEmptyFields"/>
+            <class name="tests.profile.SaveUserInfo"/>
+            <class name="tests.profile.SavePaymentInfo"/>
+            <class name="tests.profile.SaveUserInfoWithEmptyFields"/>
+            <class name="tests.profile.SavePaymentInfoWithEmptyFields"/>
         </classes>
     </test>
 
     <test name="Articles tests">
         <classes>
-            <class name="tests.articles.PA021_CheckArticlesQuantity"/>
-            <class name="tests.articles.PA022_CheckArticlePagesAreDisplayed"/>
-            <class name="tests.articles.PA023_MoveToSavedButtonIsDisabledUntilScroll"/>
-            <class name="tests.articles.PA024_CheckSavedArticlesFunctionality"/>
-            <class name="tests.articles.PA025_CheckImageSizeCanBeChangedBySlider"/>
-            <class name="tests.articles.PA026_VerifyTextsFromPageAndFromFileMatch"/>
+            <class name="tests.articles.CheckArticlesQuantity"/>
+            <class name="tests.articles.CheckArticlePagesAreDisplayed"/>
+            <class name="tests.articles.MoveToSavedButtonIsDisabledUntilScroll"/>
+            <class name="tests.articles.CheckSavedArticlesFunctionality"/>
+            <class name="tests.articles.CheckImageSizeCanBeChangedBySlider"/>
+            <class name="tests.articles.VerifyTextsFromPageAndFromFileMatch"/>
         </classes>
     </test>
 

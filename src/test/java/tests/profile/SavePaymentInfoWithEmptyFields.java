@@ -6,15 +6,15 @@ import pages.MainPage;
 import pages.ProfilePage;
 import tests.Actions;
 
-public class PA014_SavePaymentInfoWithEmptyFields extends Actions {
+public class SavePaymentInfoWithEmptyFields extends Actions {
 
     @BeforeMethod(alwaysRun = true)
     public void preConditions() {
         signInWithCookies();
     }
 
-    @Test(testName = "PA014 Save payment info with empty fields")
-    public void PA014_SavePaymentInfoWithEmptyFieldsTest() {
+    @Test(testName = "Save payment info with empty fields")
+    public void SavePaymentInfoWithEmptyFieldsTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickAvatar();
 

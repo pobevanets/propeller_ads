@@ -8,7 +8,7 @@ import tests.Actions;
 
 import static org.testng.Assert.*;
 
-public class PA011_SaveUserInfo extends Actions {
+public class SaveUserInfo extends Actions {
     String firstName = "Roman";
     String lastName = "Pobevanets";
 
@@ -17,8 +17,8 @@ public class PA011_SaveUserInfo extends Actions {
         signInWithCookies();
     }
 
-    @Test(testName = "PA011 Save user info")
-    public void PA011_SaveUserInfoTest() {
+    @Test(testName = "Save user info")
+    public void SaveUserInfoTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickAvatar();
 

@@ -8,7 +8,7 @@ import tests.Actions;
 
 import static org.testng.Assert.*;
 
-public class PA012_SavePaymentInfo extends Actions {
+public class SavePaymentInfo extends Actions {
     String cardNumber = "4242424242424242";
     String paymentSystem = "Visa";
     int paymentDay = 19;
@@ -18,8 +18,8 @@ public class PA012_SavePaymentInfo extends Actions {
         signInWithCookies();
     }
 
-    @Test(testName = "PA012 Save payment info")
-    public void PA012_SavePaymentInfoTest() {
+    @Test(testName = "Save payment info")
+    public void SavePaymentInfoTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickAvatar();
 

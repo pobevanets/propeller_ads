@@ -8,7 +8,7 @@ import tests.Actions;
 
 import static org.testng.Assert.*;
 
-public class PA024_CheckSavedArticlesFunctionality extends Actions {
+public class CheckSavedArticlesFunctionality extends Actions {
     String articleTitle = "Leonel Messi";
 
     @BeforeMethod(alwaysRun = true)
@@ -16,8 +16,8 @@ public class PA024_CheckSavedArticlesFunctionality extends Actions {
         signInWithCookies();
     }
 
-    @Test(testName = "PA024 Check Saved Articles functionality")
-    public void PA024_CheckSavedArticlesFunctionalityTest() {
+    @Test(testName = "Check Saved Articles functionality")
+    public void CheckSavedArticlesFunctionalityTest() {
         MainPage mainPage = new MainPage();
         assertFalse(mainPage.isSavedArticlesBlockDisplayed(), "Saved Articles block is displayed!");
 

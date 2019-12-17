@@ -6,15 +6,15 @@ import pages.ArticlePage;
 import pages.MainPage;
 import tests.Actions;
 
-public class PA025_CheckImageSizeCanBeChangedBySlider extends Actions {
+public class CheckImageSizeCanBeChangedBySlider extends Actions {
 
     @BeforeMethod(alwaysRun = true)
     public void preConditions() {
         signInWithCookies();
     }
 
-    @Test(testName = "PA025 Check image size can be changed by slider")
-    public void PA025_CheckImageSizeCanBeChangedBySliderTest() {
+    @Test(testName = "Check image size can be changed by slider")
+    public void CheckImageSizeCanBeChangedBySliderTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickAdvertisersButton()
                 .clickFirstArticleButton();

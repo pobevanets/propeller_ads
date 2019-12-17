@@ -6,7 +6,7 @@ import org.testng.asserts.SoftAssert;
 import pages.MainPage;
 import tests.Actions;
 
-public class PA026_VerifyTextsFromPageAndFromFileMatch extends Actions {
+public class VerifyTextsFromPageAndFromFileMatch extends Actions {
     SoftAssert softAssert = new SoftAssert();
 
     @BeforeMethod(alwaysRun = true)
@@ -14,8 +14,8 @@ public class PA026_VerifyTextsFromPageAndFromFileMatch extends Actions {
         signInWithCookies();
     }
 
-    @Test(testName = "PA026 Verify texts from page and from file match")
-    public void PA026_VerifyTextsFromPageAndFromFileMatchTest() {
+    @Test(testName = "Verify texts from page and from file match")
+    public void VerifyTextsFromPageAndFromFileMatchTest() {
         compareTextsFromPageAndFile("test_advert/test_advert.txt", "test_advert/test_advert_file_data.txt");
         compareTextsFromPageAndFile("adidas/adidas.txt", "adidas/adidas_file_data.txt");
         compareTextsFromPageAndFile("youtube/youtube.txt", "youtube/youtube_file_data.txt");

@@ -6,15 +6,15 @@ import pages.ArticlePage;
 import pages.MainPage;
 import tests.Actions;
 
-public class PA022_CheckArticlePagesAreDisplayed extends Actions {
+public class CheckArticlePagesAreDisplayed extends Actions {
 
     @BeforeMethod(alwaysRun = true)
     public void preConditions() {
         signInWithCookies();
     }
 
-    @Test(testName = "PA022 Check article pages are displayed")
-    public void PA022_CheckArticlePagesAreDisplayedTest() {
+    @Test(testName = "Check article pages are displayed")
+    public void CheckArticlePagesAreDisplayedTest() {
         MainPage mainPage = new MainPage();
         mainPage.clickAdvertisersButton()
                 .clickFirstArticleButton();
