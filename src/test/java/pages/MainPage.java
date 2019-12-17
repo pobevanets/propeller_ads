@@ -18,12 +18,11 @@ public class MainPage extends BasePage {
     private final SelenideElement savedArticlesBlock = $$("div.card").findBy(text("Saved articles"));
     private final SelenideElement bodyText = $("pre");
 
-    public MainPage waitForMainPageIsDisplayed() {
+    public void waitForMainPageIsDisplayed() {
         avatar.waitUntil(visible, 6000);
         advertisersButton.shouldBe(visible);
         publishersButton.shouldBe(visible);
         topLevelClientsButton.shouldBe(visible);
-        return this;
     }
 
     public MainPage clickAvatar() {

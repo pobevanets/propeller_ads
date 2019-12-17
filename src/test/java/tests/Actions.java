@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.Cookie;
 import pages.LoginPage;
-import pages.MainPage;
 
 public class Actions extends BaseTest {
     public void signIn(String login, String password) {
@@ -14,7 +13,6 @@ public class Actions extends BaseTest {
                 .clickSignInButton()
                 .confirmFirstConfirmationDialogue()
                 .confirmSecondConfirmationDialogue();
-        new MainPage().waitForMainPageIsDisplayed();
     }
 
     public void signInWithCookies() {
