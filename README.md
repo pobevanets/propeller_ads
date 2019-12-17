@@ -1,16 +1,33 @@
 # PropellerAds Automated Testing Championship
-Project Tech Stack: Java, Selenide, TestNG, Maven, ReportNG
+**Project Tech Stack:** Java, Selenide, TestNG, Maven, ReportNG
 
-## To run tests use the following command
-1) visible mode: 
-### $ mvn clean test 
-2) headless mode: 
-### $ mvn clean test -Dselenide.headless=true
+### Task for Championship:
+Docker container is used for application launch, use the following command to run it:  
+**$ docker run -d -p 8080:8080 qapropeller/qa-battle:latest**  
+After running this command, the application will be available by the following link: **http://localhost:8080**  
+Valid credentials to sign in to application:  
+**login:** test  
+**password:** test
 
-Besides, html reports with detailed logging for all tests and screenshots for failed tests are taken after each test run. They can be found in /test-output directory
+More detailed information can be found here:   
+https://hub.docker.com/repository/docker/qapropeller/qa-battle
 
-## Sorry, I have no time to create bug reports, but here summaries of some found bugs:
-1) seems that articleDataFileTextLink for Tim Cook article is wrong. Actual: "data/tim_cook/tim_cook.txt", Expected: "tim_cook/tim_cook_file_data.txt"
+
+## To run tests in various modes use the following commands:
+| Mode | Command |
+| --- | --- |
+| **Chrome visible** | $ mvn clean test |
+| **Chrome headless** | $ mvn clean test -Dselenide.headless=true |
+| **Firefox visible** | $ mvn clean test -Dselenide.browser=firefox |
+| **Firefox headless** | $ mvn clean test -Dselenide.browser=firefox -Dselenide.headless=true |
+
+
+### Reports:
+**html reports** with detailed logging for all tests and screenshots for failed tests are taken after each test run. They can be found in **/test-output** directory
+
+
+### Summaries of some found bugs:
+1) articleDataFileTextLink for Tim Cook article is wrong. Actual: "data/tim_cook/tim_cook.txt", Expected: "tim_cook/tim_cook_file_data.txt"
 2) loader time for Tim Cook is too long: 1000000ms
 3) text for Youtube article on the page and in downloaded file mismatch (this is catched by autotests)
 4) text for Sasha Grey article on the page and in downloaded file mismatch (this is catched by autotests)
